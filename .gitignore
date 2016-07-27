@@ -19,3 +19,11 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+.idea/.generators
+.idea/.rakeTasks
+.idea/AKSTask.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
