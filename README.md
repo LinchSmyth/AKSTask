@@ -13,16 +13,16 @@ Task description:
 
 This is my first app on Rails 5 version. Ruby version is 2.3.0.
 
-Installation and using (requires `git`, `rvm` and `bundler`):
+Installation and using (requires `git` and `bundler`):
 
 In terminal go to the directory you want to install it.
 Clone repository by running:
 ```
-git clone https://github.com/LinchSmyth/LightItInterviewTask.git
+git clone https://github.com/LinchSmyth/AKSTask.git
 ```
 Move to the directory:
 ```
-cd ./LightItInterviewTask/
+cd ./AKSTask/
 ```
 Install gems and run:
 ```
