@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'room/show'
+
   get 'about', to: 'about#show'
 
   root 'home#show'
