@@ -1,24 +1,31 @@
-# README
+# This is my interview task for [AppliKey Solutions] (http://applikeysolutions.com/) company.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Task description:
+> Необходимо написать приложение "чат":
+> - Можно создавать комнаты и любой может в них вступить и писать сообщения;
+> - У каждого юзера должен быть аватар;
+> - Использовать ajax в любом месте, на свое усмотрение;
+> - Задеплоить приложение на heroku;
+> - К верстке особых требований нет, можно использовать bootstrap.
+> - Желательно не использовать гемы, стараться реализовать весь функционал самому. 
+>
+> Просьба указать примерное количество времени, затраченное на выполнение задания (максимальный срок - неделя)
 
-Things you may want to cover:
+This is my first app on Rails 5 version. Ruby version is 2.3.0.
 
-* Ruby version
+Installation and using (requires `git`, `rvm` and `bundler`):
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+In terminal go to the directory you want to install it.
+Clone repository by running:
+```
+git clone https://github.com/LinchSmyth/LightItInterviewTask.git
+```
+Move to the directory:
+```
+cd ./LightItInterviewTask/
+```
+Install gems and run:
+```
+bundle
+rails s
+```
