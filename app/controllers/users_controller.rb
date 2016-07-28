@@ -26,10 +26,11 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        sign_in @user
+        redirect_to @user # here we need to change redirection page later
+        format.html { redirect_to @user, notice: 'New user was successfully created. Now you can chat!' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -73,3 +74,5 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :password, :password_confirmation)
     end
 end
+
+#TODO: redirect to homepage, not to user
