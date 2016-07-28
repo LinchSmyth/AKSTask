@@ -27,3 +27,7 @@
 .idea/modules.xml
 .idea/vcs.xml
 .idea/workspace.xml
+.idea/runConfigurations/test__AKSTask.xml
+.idea/runConfigurations/Development__AKSTask.xml
+.idea/runConfigurations/Production__AKSTask.xml
+.idea/runConfigurations/spec__AKSTask.xml
