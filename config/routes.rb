@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   get 'rooms/show'
 
   get 'about', to: 'about#show'
