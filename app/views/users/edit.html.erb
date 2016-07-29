@@ -1,6 +1,9 @@
-<h1>Editing User</h1>
+<h1>Update your profile</h1>
 
-<%= render 'form', user: @user %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<div class="row">
+  <div class="">
+    <!--<%#= render 'shared/error_messages' %>-->
+    <%= render 'form', user: @user %>
+    <!--TODO: allow user to change his avatar-->
+  </div>
+</div>
