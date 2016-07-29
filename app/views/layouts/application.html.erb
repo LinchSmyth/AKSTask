@@ -29,6 +29,7 @@
           <% if signed_in? %>
             <li>
               <%= link_to "Sign out", signout_path, method: "delete" %>
+              <!-- TODO:<li><#%= link_to "Users", users_path %></li> -->
             </li>
           <% else %>
             <li><%= link_to "Sign in", signin_path %></li>
