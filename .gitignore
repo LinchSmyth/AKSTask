@@ -31,3 +31,5 @@
 .idea/runConfigurations/Development__AKSTask.xml
 .idea/runConfigurations/Production__AKSTask.xml
 .idea/runConfigurations/spec__AKSTask.xml
+
+/public/system/users/avatars/*
