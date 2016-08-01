@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
   def show
     @chat_room = Room.includes(:messages).find_by(id: params[:id])
+    @message = Message.new
   end
   #TODO: remove functional from above (don't forget about view silly!)
   def index
@@ -12,7 +13,7 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @chat_room = current_user.chat_rooms.build(room_params)
+    @chat_room = current_user.rooms.build(room_params)
     if @chat_room.save
       flash[:success] = 'Chat room added!'
       redirect_to rooms_path

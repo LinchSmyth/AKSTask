@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
 
-  get 'rooms/show'
+  # get 'rooms/show'
+  resources :rooms, only: [:new, :create, :show, :index]
+  root 'rooms#index'
 
   get 'about', to: 'about#show'
 

@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         sign_in @user
-        redirect_to @user # here we need to change redirection page later
+        # redirect_to @user  here we need to change redirection page later
         format.html { redirect_to @user, notice: 'New user was successfully created. Now you can chat!' }
         format.json { render :show, status: :created, location: @user }
       else
