@@ -22,7 +22,6 @@ jQuery(document).on 'turbolinks:load', ->
       send_message: (message, room_id) ->
         @perform 'send_message', message: message, room_id: room_id
 
-
     $('#new_message').submit (e) ->
       $this = $(this)
       textarea = $this.find('#message_body')
