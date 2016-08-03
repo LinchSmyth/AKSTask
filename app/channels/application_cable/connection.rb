@@ -9,8 +9,9 @@ module ApplicationCable
 
     protected
 
-    def find_verified_user # this checks whether a user is authenticated with devise
-      if User.find_by(remember_token: remember_token)
+    def find_verified_user
+      token = Digest::SHA1.hexdigest(cookies[:remember_token])
+      if verified_user = User.find_by(remember_token: token)
         verified_user
       else
         reject_unauthorized_connection
