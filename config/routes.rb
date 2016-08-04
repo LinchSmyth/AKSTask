@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 
   # get 'rooms/show'
   resources :rooms, only: [:new, :create, :show, :index]
-  # root 'rooms#index'
+  root 'rooms#index'
+  # TODO: rewrite this line and root
 
   get 'about', to: 'about#show'
 
