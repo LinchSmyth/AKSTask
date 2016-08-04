@@ -13,6 +13,16 @@
       <hr />
       <p>Rooms created: <%= pluralize(@user.rooms.count, 'room') %></p>
       <hr />
+      <br />
+      Your rooms:
+      <% if @user.rooms.any?%>
+        <% @user.rooms.each do |room| %>
+          <p><li><%= link_to "#{room.title}", room_path(room) %></li></p>
+        <% end %>
+      <% else %>
+        Looks like you haven't any chat room yet... Create your own or join to existing rooms <%= link_to "HERE", rooms_path %>
+        <!-- TODO: debug this line -->
+      <% end %>
     </h4>
   </div>
 </div>
