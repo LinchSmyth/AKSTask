@@ -1,20 +1,15 @@
 <h1><%= @chat_room.title %></h1>
 <hr />
-<div id="messages" data-room-id="<%= @chat_room.id %>">
+<div id="messages" data-room-id="<%= @chat_room.id %>"  style="height: 400px;">
   <%= render @chat_room.messages%>
 </div>
 
 <%= form_for @message, url: '#' do |f| %>
+  <%= hidden_field_tag 'chat_room_id', @chat_room.id %>
   <div class="form-group">
     <%= f.label :body %>
     <%= f.text_area :body, class: 'form-control' %>
     <small class="text-muted">From 2 to 1000 characters</small>
   </div>
-
   <%= f.submit 'Post', class: 'btn btn-primary btn-lg' %>
 <% end %>
-
-<!--<form>-->
-  <!--<label>Say something:</label><br>-->
-  <!--<input type="text" data-behavior="room_speaker">-->
-<!--</form>-->

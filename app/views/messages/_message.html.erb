@@ -1,15 +1,12 @@
-<div class="card">
-  <div class="card-block">
-    <div class="row">
-      <div class="col-md-1">
-        <!--<#%= image_tag @user.avatar.url(:medium) %>-->
-      </div>
-      <div class="col-md-11">
-        <p class="card-text">
-          <span class="text-muted"><%= message.user.name %> at <%= message.timestamp %> says</span><br>
-          <%= message.body %>
-        </p>
-      </div>
-    </div>
+<div class="row">
+  <hr />
+  <div class="col-md-1">
+    <%= image_tag message.user.avatar.url(:thumb), class: 'img-rounded' %>
+  </div>
+  <div class="col-md-11">
+    <p class="card-text">
+      <span class="text-muted"><%= message.user.name %> at <%= message.timestamp %> says</span><br>
+      <%= message.body %>
+    </p>
   </div>
 </div>
