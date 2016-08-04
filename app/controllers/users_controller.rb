@@ -45,21 +45,15 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
-      flash[:success] = 'Profile updated'
-      redirect_to @user # here we also need to change redirection page (also copy methods from method below)
-    else
-      render 'edit'
+    respond_to do |format|
+      if @user.update_attributes(user_params)
+        format.html { redirect_to @user, notice: 'Profile updated.' }
+        format.json { render :show, status: :ok, location: @user }
+      else
+        format.html { render :edit }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
     end
-    # respond_to do |format|
-    #   if @user.update(user_params)
-    #     format.html { redirect_to @user, notice: 'User was successfully updated.' }
-    #     format.json { render :show, status: :ok, location: @user }
-    #   else
-    #     format.html { render :edit }
-    #     format.json { render json: @user.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   # DELETE /users/1
@@ -80,7 +74,6 @@ class UsersController < ApplicationController
   end
 
   # Before filters
-
   def signed_in_user
     redirect_to signin_url, notice: 'Please sign in.' unless signed_in?
   end

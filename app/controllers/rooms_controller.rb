@@ -3,7 +3,7 @@ class RoomsController < ApplicationController
     @chat_room = Room.includes(:messages).find_by(id: params[:id])
     @message = Message.new
   end
-  #TODO: remove functional from above (don't forget about view silly!)
+
   def index
     @chat_rooms = Room.all
   end

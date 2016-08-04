@@ -1,10 +1,18 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <%= image_tag @user.avatar.url(:medium)%>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-<!-- TODO: remove dat fucking useless links-->
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<br />
+<div class="row">
+  <div class="col-md-3 col-md-offset-1">
+    <%= image_tag @user.avatar.url(:medium), class: 'img-thumbnail'%>
+    <h3><%= @user.name %></h3>
+    <%= link_to 'Edit profile', edit_user_path(@user) %>
+  </div>
+  <div class="col-md-7">
+    <h4>
+      <hr />
+      <p>You have typed: <%= pluralize(@user.messages.count, 'message') %></p>
+      <hr />
+      <p>Rooms created: <%= pluralize(@user.rooms.count, 'room') %></p>
+      <hr />
+    </h4>
+  </div>
+</div>
