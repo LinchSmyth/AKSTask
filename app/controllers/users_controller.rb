@@ -88,5 +88,3 @@ class UsersController < ApplicationController
     redirect_to(root_url) unless current_user?(@user)
   end
 end
-
-#TODO: redirect to homepage, not to user (in #create and #update)
