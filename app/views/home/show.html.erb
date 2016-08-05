@@ -1,3 +1,73 @@
-<div class="row">
-  <h4>Unfinished home page</h4>
-</div>
+<% if signed_in? %>
+    <script type="text/javascript">
+      window.location.href="/rooms"
+    </script>
+<% else %>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <br />
+      <h2><p class="text-center">Welcome to the chats app!!!</p></h2>
+      <hr />
+      <h4>
+        <p class="text-center"> Here you can simply write messages to users, that is connected to the chat room.
+        You can even create your own room!
+        </p>
+        <br />
+        <p class="text-center">
+          So what are you waiting for?
+          <%= link_to 'Create', new_user_path %>
+          your account or
+          <%= link_to 'sign in', new_session_path %>
+          now!
+        </p>
+      </h4>
+      <hr />
+      <div class="col-md-4 col-md-offset-1">
+        <h2>
+          <p class="text-center">
+            Sign in
+          </p>
+        </h2>
+        <div class="field">
+          <%= form_for(:session, url: sessions_path, method: 'post') do |f| %>
+            <%= f.label :name %>
+            <%= f.text_field :name, class: 'form-control' %>
+            <br />
+            <%= f.label :password %>
+            <%= f.password_field :password, class: 'form-control' %>
+            <br />
+            <div class="actions">
+              <%= f.submit "Sign in", class: "btn btn-large btn-primary btn-block" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-md-4 col-md-offset-2">
+        <h2>
+          <p class="text-center">
+            Create account
+          </p>
+        </h2>
+        <div class="field">
+          <%= form_for(:user, url: users_path, method: 'post') do |f| %>
+            <%= f.label :name, 'Name (minimum is 3 characters)' %>
+            <%= f.text_field :name, class: 'form-control' %>
+            <br />
+            <%= f.label :password, 'Password (at least 6 symbols)' %>
+            <%= f.password_field :password, class: 'form-control' %>
+            <br />
+            <%= f.label :password_confirmation, 'Password confirmation' %>
+            <%= f.password_field :password_confirmation, class: 'form-control'%>
+            <br />
+            <%= f.label :avatar, 'Choose your avatar picture (not necessary)'%>
+            <%= f.file_field :avatar %>
+            <br />
+            <div class="actions">
+              <%= f.submit "Create my account", class: 'btn btn-large btn-primary btn-block' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
