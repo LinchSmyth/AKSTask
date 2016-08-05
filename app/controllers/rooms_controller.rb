@@ -15,8 +15,7 @@ class RoomsController < ApplicationController
   def create
     @chat_room = current_user.rooms.build(room_params)
     if @chat_room.save
-      flash[:success] = 'Chat room added!'
-      redirect_to rooms_path
+      redirect_to @chat_room, notice: 'Room was successfully created!'
     else
       render 'new'
     end

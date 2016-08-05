@@ -1,5 +1,9 @@
-<p id="notice"><%= notice %></p>
 <div class="row">
+  <br />
+  <div class="col-md-10 col-md-offset-1">
+    <%= render 'shared/notice' %>
+  </div>
+  <br />
   <div class="col-md-9 col-md-offset-1">
     <ul class="users">
       <% @users.each do |user| %>
