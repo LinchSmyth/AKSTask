@@ -1,27 +1,44 @@
-<p id="notice"><%= notice %></p>
+<br />
+<% if notice != nil%>
+  <div class="alert alert-success">
+    <p id="notice"><%= notice %></p>
+  </div>
+<% end %>
 <br />
 <div class="row">
   <div class="col-md-3 col-md-offset-1">
     <%= image_tag @user.avatar.url(:medium), class: 'img-thumbnail'%>
     <h3><%= @user.name %></h3>
-    <%= link_to 'Edit profile', edit_user_path(@user) %>
+    <% if @user == current_user %>
+      <%= link_to 'Edit profile', edit_user_path(@user) %>
+    <% end %>
   </div>
   <div class="col-md-7">
     <h4>
       <hr />
-      <p>You have typed: <%= pluralize(@user.messages.count, 'message') %></p>
+      <% if @user != current_user %>
+          <p><%= @user.name %> have typed: <%= pluralize(@user.messages.count, 'message') %></p>
+      <% else %>
+          <p>You have typed: <%= pluralize(@user.messages.count, 'message') %></p>
+      <% end %>
       <hr />
       <p>Rooms created: <%= pluralize(@user.rooms.count, 'room') %></p>
       <hr />
       <br />
-      Your rooms:
+      <% if @user != current_user %>
+        <%= @user.name %>'s rooms:
+      <% else %>
+          Your rooms:
+      <% end %>
       <% if @user.rooms.any?%>
         <% @user.rooms.each do |room| %>
           <p><li><%= link_to "#{room.title}", room_path(room) %></li></p>
         <% end %>
+      <% elsif @user == current_user %>
+        <br /><h5>Looks like you haven't any chat room yet... Create your own or join to existing rooms
+                  <%= link_to "HERE", rooms_path %></h5>
       <% else %>
-        <br /><h5>Looks like you haven't any chat room yet... Create your own or join to existing rooms <%= link_to "HERE", rooms_path %></h5>
-        <!-- TODO: debug this line -->
+          <br /><h5><%= @user.name %> don't have any rooms... :(</h5>
       <% end %>
     </h4>
   </div>
