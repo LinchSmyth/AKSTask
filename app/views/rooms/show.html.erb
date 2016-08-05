@@ -1,15 +1,22 @@
-<h1><%= @chat_room.title %></h1>
-<hr />
-<div id="messages" data-room-id="<%= @chat_room.id %>"  style="height: 400px;">
+<div class="col-md-12">
+  <h1><%= @chat_room.title %></h1>
+  <p><h5>Chat room owner: <%= @chat_room.user.name %></h5></p>
+  <hr />
+</div>
+<div class="col-md-10 col-md-offset-1" id="messages" data-room-id="<%= @chat_room.id %>"  style="height: 400px;">
   <%= render @chat_room.messages%>
 </div>
 
-<%= form_for @message, url: '#' do |f| %>
-  <%= hidden_field_tag 'chat_room_id', @chat_room.id %>
-  <div class="form-group">
-    <%= f.label :body %>
-    <%= f.text_area :body, class: 'form-control' %>
-    <small class="text-muted">From 2 to 1000 characters</small>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1" style="margin-bottom: 50px">
+    <%= form_for @message, url: '#' do |f| %>
+      <%= hidden_field_tag 'chat_room_id', @chat_room.id %>
+      <div class="form-group">
+        <%= f.label :body %>
+        <%= f.text_area :body, class: 'form-control', rows: 4 %>
+        <small class="text-muted">Up to 1000 characters</small>
+      </div>
+      <%= f.submit 'Post', class: 'btn btn-primary btn-lg btn-block' %>
+    <% end %>
   </div>
-  <%= f.submit 'Post', class: 'btn btn-primary btn-lg' %>
-<% end %>
+</div>
