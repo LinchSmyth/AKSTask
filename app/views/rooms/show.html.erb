@@ -5,7 +5,7 @@
   <p><h5>Chat room owner: <%= @chat_room.user.name %></h5></p>
   <hr />
 </div>
-<div class="col-md-10 col-md-offset-1" id="messages" data-room-id="<%= @chat_room.id %>"  style="height: 400px;">
+<div class="col-md-10 col-md-offset-1" id="messages" data-room-id="<%= @chat_room.id %>"  style="height: 350px;">
   <%= render @chat_room.messages%>
 </div>
 
