@@ -20,7 +20,7 @@
           <p><li><%= link_to "#{room.title}", room_path(room) %></li></p>
         <% end %>
       <% else %>
-        Looks like you haven't any chat room yet... Create your own or join to existing rooms <%= link_to "HERE", rooms_path %>
+        <br /><h5>Looks like you haven't any chat room yet... Create your own or join to existing rooms <%= link_to "HERE", rooms_path %></h5>
         <!-- TODO: debug this line -->
       <% end %>
     </h4>

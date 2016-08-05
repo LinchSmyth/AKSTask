@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   has_many :messages, dependent: :destroy
 
-  has_attached_file :avatar, styles: { medium: '250x250>', thumb: '60x60>' }
+  has_attached_file :avatar, styles: { medium: '300x300#', thumb: '60x60#' }
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   def User.new_remember_token
