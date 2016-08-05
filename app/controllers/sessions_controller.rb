@@ -8,8 +8,7 @@ class SessionsController < ApplicationController
       sign_in user
       redirect_to user
     else
-      # here needs to be an error messages
-      render 'sessions/new'
+      redirect_to new_session_path, notice: 'Invalid login or password'
     end
   end
 
@@ -18,5 +17,3 @@ class SessionsController < ApplicationController
     redirect_to root_url
   end
 end
-
-#TODO: display error-messages
