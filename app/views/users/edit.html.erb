@@ -1,9 +1,9 @@
-<h1>Update your profile</h1>
-
 <div class="row">
-  <div class="">
-    <!--<%#= render 'shared/error_messages' %>-->
+  <div class="col-md-10 col-md-offset-1">
+    <h1>Update your profile</h1>
+    <%= link_to 'Delete my account', @user, method: :delete, data:
+        { confirm: "You sure? This operation can't be undone" }, class: 'btn btn-sm btn-default' %>
+    <hr />
     <%= render 'form', user: @user %>
-    <!--TODO: allow user to change his avatar-->
   </div>
 </div>
