@@ -1,1 +1,6 @@
-<li><%= link_to "Enter #{room.title}", room_path(room) %></li>
+<% if room.user.id == current_user.id %>
+    <h4><li><%= link_to "Enter \"#{room.title}\" chat room", room_path(room) %>
+      (You are owner of this room)</li></h4>
+<% else %>
+    <h4><li><%= link_to "Enter \"#{room.title}\" chat room", room_path(room) %></li></h4>
+<% end %>
