@@ -1,31 +1,32 @@
 <%= form_for(user) do |f| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <div class="alert alert-danger">
+        <h4><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h4>
 
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <span class="glyphicon glyphicon-remove"></span> <%= message %><br />
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
-
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.label :name, 'Name (minimum is 3 characters)' %>
+    <%= f.text_field :name, class: 'form-control' %>
     <br />
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.label :password, 'Password (at least 6 symbols)' %>
+    <%= f.password_field :password, class: 'form-control' %>
     <br />
-    <%= f.label :password_confirmation, "Confirmation" %>
-    <%= f.password_field :password_confirmation %>
+    <%= f.label :password_confirmation, 'Password confirmation' %>
+    <%= f.password_field :password_confirmation, class: 'form-control'%>
     <br />
-    <%= f.label :avatar%>
+    <%= f.label :avatar, 'Choose your avatar picture (not necessary)'%>
     <%= f.file_field :avatar %>
   </div>
-
+    <br />
   <div class="actions">
-    <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+    <%= f.submit 'Create my account', class: 'btn btn-large btn-primary' %>
   </div>
 <% end %>
