@@ -11,7 +11,8 @@ Task description:
 >
 > Просьба указать примерное количество времени, затраченное на выполнение задания (максимальный срок - неделя)
 
-This is my first app on Rails 5 version. Ruby version is 2.3.0.
+*This is my first app on Rails 5 version. Ruby version is 2.3.0.
+Also it's my first experience in ActionCable.*
 
 Installation and using (requires `git` and `bundler`):
 
