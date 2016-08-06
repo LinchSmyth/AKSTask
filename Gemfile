@@ -6,7 +6,6 @@ gem 'bcrypt'
 gem 'paperclip', '~> 5.0.0'
 
 gem 'pg'
-gem 'rails_12factor'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
