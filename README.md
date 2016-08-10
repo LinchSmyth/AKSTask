@@ -1,4 +1,10 @@
-# This is my interview task for [AppliKey Solutions] (http://applikeysolutions.com/) company.
+# This is deployed version of my interview task for [AppliKey Solutions] (http://applikeysolutions.com/) company.
+
+This app is currently running on [heroku] (https://akstask.herokuapp.com/).
+
+Note that:
+- The default application have some minor changes. For example, it is not using Postgres as default DB, it is using SQLite database and don't have redis gem at all. And also don't have some lines, which is necessary for heroku but doesn't make sense if you want to start this app locally. If you want to see that version of app go to [master branch] (https://github.com/LinchSmyth/AKSTask).
+- I'm not using aws-sdk gem for paperclip yet (and maybe I will not use it at all), so heroku will delete user avatars after server is stopped.
 
 Task description:
 > Необходимо написать приложение "чат":
@@ -11,7 +17,8 @@ Task description:
 >
 > Просьба указать примерное количество времени, затраченное на выполнение задания (максимальный срок - неделя)
 
-This is my first app on Rails 5 version. Ruby version is 2.3.0.
+*This is my first app on Rails 5 version. Ruby version is 2.3.0.
+Also it's my first experience in ActionCable.*
 
 Installation and using (requires `git` and `bundler`):
 
@@ -29,3 +36,4 @@ Install gems and run:
 bundle
 rails s
 ```
+*This instruction was copied from master branch so I'm don't check whether it works or not. If you have problems with starting deployed version of my app write an issue or contact me.*
