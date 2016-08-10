@@ -33,6 +33,10 @@ Move to the directory:
 ```
 cd ./AKSTask/
 ```
+Make sure that you're in deploy branch:
+```
+git checkout Deploy
+```
 Install gems and run:
 ```
 bundle
