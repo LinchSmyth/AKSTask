@@ -20,6 +20,8 @@ Task description:
 *This is my first app on Rails 5 version. Ruby version is 2.3.0.
 Also it's my first experience in ActionCable.*
 
+
+
 Installation and using (requires `git` and `bundler`):
 
 In terminal go to the directory you want to install it.
@@ -36,4 +38,6 @@ Install gems and run:
 bundle
 rails s
 ```
+
+
 *This instruction was copied from master branch so I'm don't check whether it works or not. If you have problems with starting deployed version of my app write an issue or contact me.*
