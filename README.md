@@ -31,6 +31,10 @@ Move to the directory:
 ```
 cd ./AKSTask/
 ```
+Make sure that you're in master branch:
+```
+git checkout master
+```
 Install gems and run:
 ```
 bundle
