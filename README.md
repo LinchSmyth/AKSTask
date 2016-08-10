@@ -1,5 +1,5 @@
 # This is my interview task for [AppliKey Solutions] (http://applikeysolutions.com/) company.
-###### This app is currently running on [heroku] (https://akstask.herokuapp.com/).
+## This app is currently running on [heroku] (https://akstask.herokuapp.com/).
 
 Note that:
 - The deployed application have some minor changes. For example, SQLite database have changed to Postgres, added Redis gem and so on. If you want to see that version of app go to [deploy branch] (https://github.com/LinchSmyth/AKSTask/tree/Deploy).
