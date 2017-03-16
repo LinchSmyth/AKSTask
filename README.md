@@ -1,9 +1,9 @@
-# This is deployed version of my interview task for [AppliKey Solutions] (http://applikeysolutions.com/) company.
+# This is deployed version of my interview task for [AppliKey Solutions](http://applikeysolutions.com/) company.
 
-This app is currently running on [heroku] (https://akstask.herokuapp.com/).
+This app is currently running on [heroku](https://akstask.herokuapp.com/).
 
 Note that:
-- The default application have some minor changes. For example, it is not using Postgres as default DB, it is using SQLite database and don't have redis gem at all. And also don't have some lines, which is necessary for heroku but doesn't make sense if you want to start this app locally. If you want to see that version of app go to [master branch] (https://github.com/LinchSmyth/AKSTask).
+- The default application have some minor changes. For example, it is not using Postgres as default DB, it is using SQLite database and don't have redis gem at all. And also don't have some lines, which is necessary for heroku but doesn't make sense if you want to start this app locally. If you want to see that version of app go to [master branch](https://github.com/LinchSmyth/AKSTask).
 - I'm not using aws-sdk gem for paperclip yet (and maybe I will not use it at all), so heroku will delete user avatars after server is stopped.
 
 Task description:
